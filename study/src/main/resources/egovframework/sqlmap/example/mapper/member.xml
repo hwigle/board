@@ -34,4 +34,25 @@
 
   	</select>
 	
+	<!-- 로그인 -->
+	<select id="login" resultType="memberVO">
+		SELECT 
+				* 
+		FROM 
+				member 
+		WHERE 
+				id = #{id}
+			and pw = #{pw} 
+	</select>
+	
+	<!-- 로그인 -->
+	<select id="loginPost" resultType="memberVO">
+		SELECT 
+				*
+		FROM 
+				member 
+		WHERE 
+				id = #{id}
+			and pw = #{pw} 
+	</select>
 </mapper>

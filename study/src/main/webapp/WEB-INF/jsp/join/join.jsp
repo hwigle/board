@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<script src="../js/jquery-3.6.3.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/jquery-3.6.3.min.js"></script>
 </head>
 <style>
 /* 중복아이디 존재하지 않는경우 */
@@ -30,6 +30,7 @@
 }    
 </style>
 <body>
+<%@ include file="/fix/header.jsp" %>
 <div class="wrapper">
 	<form id="join_frm" action="/join.do" method="post">
 	<div class="wrap">
@@ -49,14 +50,12 @@
 				<div class="pw_input_box" >
 					<input class="pw_input" id="pw" name="pw">
 				</div>
-				<span class="final_pw_ck">비밀번호를 입력해주세요.</span>
 			</div>
 			<div class="pwck_wrap">
 				<div class="pwck_name">비밀번호 확인</div>
 				<div class="pwck_input_box" >
 					<input class="pwck_input" id="pwck" name="pwck">
 				</div>
-				<span class="final_pwck_ck">비밀번호 확인을 입력해주세요.</span>
 				<span class="pwck_input_re_1">비밀번호가 일치합니다.</span>
 				<span class="pwck_input_re_2">비밀번호가 일치하지 않습니다.</span>
 			</div>

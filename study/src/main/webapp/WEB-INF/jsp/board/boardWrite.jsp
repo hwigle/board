@@ -59,6 +59,8 @@
 	}
 </script>
 <body>
+<%@ include file="/fix/header.jsp" %>
+<div>
 <h1>글쓰기</h1>
 		<table>
 			<tr>
@@ -80,5 +82,6 @@
 				</th>
 			</tr>
 		</table>
+		</div>
 </body>
 </html>

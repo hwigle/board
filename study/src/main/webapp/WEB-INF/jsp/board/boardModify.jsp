@@ -45,6 +45,8 @@
 	}
 </script>
 <body>
+<%@ include file="/fix/header.jsp" %>
+<div>
 <h1>글수정</h1>
 
 		<input type="hidden" id="bno" name="bno" value="${detail.bno}">
@@ -68,5 +70,6 @@
 				</th>
 			</tr>
 		</table>
+		</div>
 </body>
 </html>

@@ -26,5 +26,20 @@ public class MemberServiceImpl implements MemberService{
 	public int idChk(String id) throws Exception {
 		return mapper.idChk(id);
 	}
+
+	// 로그인
+	@Override
+	public MemberVO login(MemberVO vo) throws Exception {
+		return mapper.login(vo);
+	}
+
+	@Override
+	public MemberVO loginPost(MemberVO vo) throws Exception {
+		return mapper.loginPost(vo);
+	}
+
+
+	
+	
 	
 }

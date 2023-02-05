@@ -28,6 +28,12 @@ public class BoardController {
 		
 		private static final Logger logger = LoggerFactory.getLogger(BoardController.class); 
 				
+		// 메인
+		@GetMapping("/main.do")
+		public String main() {
+			return "/main";
+		}
+		
 		// 게시글 목록
 		@GetMapping("/boardList.do")
 		public String list(Criteria cri, ModelMap model) throws Exception {
@@ -148,6 +154,6 @@ public class BoardController {
 			
 			service.deleteBoard(bno);
 			
-			return "redirect:boardList.do";
+			return "redirect:boardList.do"; // redirect 오른쪽 주소로 URL 요청을 다시 하는 것 > 그로 인해 delete.do에서 boardList.do로 주소가 바뀌고 여기에 속한 컨트롤러의 함수가 한번 더 호출
 		}
 }

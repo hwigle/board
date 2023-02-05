@@ -14,11 +14,13 @@ $(function(){
 		if(confirm("정말 삭제하시겠습니까?")){
 			location.replace("delete.do?bno=${detail.bno}");
 		}
-	})
-});
+	}) 
+});   
 
 </script>
 <body>
+<%@ include file="/fix/header.jsp" %>
+<div>
 <h1> 게시글 상세</h1>
 <form name="frm" method="get">
 <table border="2">
@@ -55,5 +57,6 @@ $(function(){
 	</tr>
 </table>
 </form>
+</div>
 </body>
 </html>

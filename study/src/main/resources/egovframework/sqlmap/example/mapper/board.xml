@@ -35,7 +35,7 @@
 	        	regdate, 
 	        	hit
             FROM
-            	board 
+            	(SELECT * FROM board ORDER BY bno DESC) 
             WHERE 
             	rownum <= #{pageNum} * #{amount}
             ) 

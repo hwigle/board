@@ -37,10 +37,13 @@ a:hover {
 .active {
 	background-color: #cdd5ec;
 }
+
 </style>
 <body>
-	<h1>게시글 목록</h1>
-	<button style="margin: 0 0 10px 277px;"type="button" onclick="location='join.do'">가입하기</button>
+<%@ include file="/fix/header.jsp" %>
+<div>
+	<h1><a href="boarList.do">게시글 목록</a></h1>
+	<!-- <button style="margin: 0 0 10px 277px;"type="button" onclick="location='join.do'">가입하기</button> -->
 	<table border="1px">
 		<tr>
 			<th>글번호</th>
@@ -84,6 +87,7 @@ a:hover {
 			</ul>
 		</div>
 	</div>
+</div>
 	<!-- 페이징[E] -->
 	
 	<form id="moveForm" method="get">

@@ -11,5 +11,9 @@ public interface MemberMapper {
 		
 		// ID 중복 검사
 		public int idChk(String id) throws Exception;
-
+		
+		// 로그인
+		public MemberVO login(MemberVO vo) throws Exception;
+		
+		public MemberVO loginPost(MemberVO vo) throws Exception;
 }
