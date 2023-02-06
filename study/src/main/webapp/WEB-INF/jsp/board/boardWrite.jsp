@@ -69,7 +69,7 @@
 			</tr>
 			<tr>
 				<th><label for="name">작성자</label></th>
-				<td><input type="text" name="writer" id="writer"></td>
+				<td><input type="text" name="writer" id="writer" value="${loginUser.name}" readonly="readonly"></td>
 			</tr>
 			<tr>
 				<th><label for="content">글내용</label></th>

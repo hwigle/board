@@ -43,10 +43,24 @@
 						alert("로그인 정보가 올바르지 않습니다.");
 					</script>
 			</c:if>
-			<input type="submit" class="loginBtn" value="로그인"> 
+			<input type="submit" id="loginBtn" class="loginBtn" value="로그인"> 
 			<input type="button" value="홈으로" onclick="location='/boardList.do'">
 		</div>
 	</form>
 </body>
+<script>
+$("#loginBtn").click(function() {
+	if ($.trim($("#id").val()) == "") {
+		alert("이름을 입력해주세요.");
+		$("#id").focus();
+		return false;
+	}
+	if ($.trim($("#pw").val()) == "") {
+		alert("비밀번호를 입력해주세요.");
+		$("#pw").focus();
+		return false;
+	}
+})
+</script>
 </html>
 }

@@ -57,7 +57,7 @@
 			</tr>
 			<tr>
 				<th><label for="name">작성자</label></th>
-				<td><input type="text" id="writer" name="writer" value="${detail.writer}"></td>
+				<td><input type="text" id="writer" name="writer" value="${detail.writer}" readonly="readonly"></td>
 			</tr>
 			<tr>
 				<th><label for="content">글내용</label></th>

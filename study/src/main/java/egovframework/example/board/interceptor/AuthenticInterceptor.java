@@ -10,7 +10,7 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import egovframework.example.board.vo.BoardVO;
 
-public class BoardInterceptor extends HandlerInterceptorAdapter {
+public class AuthenticInterceptor extends HandlerInterceptorAdapter {
 
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {

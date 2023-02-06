@@ -34,7 +34,7 @@ $(function(){
 	</tr>
 	<tr>
 		<th>제목</th>
-		<td>${detail.title}</td>
+		<td >${detail.title} </td>
 	</tr>
 	<tr>
 		<th>글내용</th>
@@ -48,11 +48,13 @@ $(function(){
 		<th>조회수</th>
 		<td>${detail.hit}</td>
 	</tr>
-		<tr colspan="3">
+		<tr>
 		<td>
 		<input type="button" value="목록" onclick="location.href='boardList.do'">
-		<input type="button" value="수정" onclick="location.href='boardModify.do?bno=${detail.bno}'">
-		<input type="button" id="delBtn" value="삭제">
+		<c:if test="${loginUser.name == detail.writer }">
+			<input type="button" value="수정" onclick="location.href='boardModify.do?bno=${detail.bno}'">
+			<input type="button" id="delBtn" value="삭제">
+		</c:if>
 		</td>
 	</tr>
 </table>

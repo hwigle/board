@@ -62,7 +62,9 @@ a:hover {
 			</tr>
 		</c:forEach>
 	</table>
+	<c:if test="${loginUser != null}">
 	<button style="margin:10px 291px;" type="button" onclick="location='boardWrite.do'">글쓰기</button>
+	</c:if>
 	
 	<!-- 페이징[S] -->
 	<div class="pageInfo_wrap">
@@ -90,7 +92,7 @@ a:hover {
 </div>
 	<!-- 페이징[E] -->
 	
-	<form id="moveForm" method="get">
+	<form id="moveForm" action="/boardList.do" method="get">
 		<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}">
 		<input type="hidden" name="amount" value="${pageMaker.cri.amount}">
 	</form>
@@ -103,7 +105,6 @@ a:hover {
 	$(".pageInfo a").on("click", function(e) {
 		e.preventDefault();
 		moveForm.find("input[name='pageNum']").val($(this).attr("href"));
-		moveForm.attr("action", "/boardList.do");
 		moveForm.submit();
 	});
 </script>

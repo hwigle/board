@@ -68,22 +68,25 @@ public class MemberController {
 	
 	 // 로그인
 	@PostMapping("login.do")
-	public String login(HttpServletRequest request, MemberVO vo, ModelMap model) throws Exception {
+	public String login(MemberVO vo, ModelMap model) throws Exception {
 
-		HttpSession session = request.getSession();
+		try {
+			// 로그인 성공시 vo 반환
+			MemberVO login = service.login(vo);
 
-		MemberVO lvo = service.login(vo);
-
-		if (lvo == null) { // 로그인 실패
-			int result = 0;
-			model.addAttribute("result", result);
-			return "login/loginPage";
+			if (login == null) { // 로그인 실패
+				int result = 0;
+				model.addAttribute("result", result);
+				return "login/loginPage";
+			}
+			// 로그인 성공
+			model.addAttribute("login", login);
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-
-		session.setAttribute("member", lvo);
 		return "redirect:/boardList.do";
 	}
-	 
+	
 	// 로그아웃
 	@PostMapping("logout.do")
 	@ResponseBody
@@ -91,7 +94,7 @@ public class MemberController {
 		
 		HttpSession session = request.getSession();
 		session.invalidate(); // 세션 전체 무효화
-		// session.removeAttribute(name); 특정 이름으로 네이밍한 session 객체를 삭제
+		//session.removeAttribute("loginUser"); //특정 이름으로 네이밍한 session 객체를 삭제
 		return "redirect:/board/boardList";
 	}
 

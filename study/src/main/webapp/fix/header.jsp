@@ -108,12 +108,12 @@
 	<div class="wrap">
 		<div class="top_area">
 				<div class="login_area">
-					<c:if test="${member == null }">
+					<c:if test="${loginUser == null }">
 						<div class="login_button"><a href="/loginPage.do">로그인</a></div>
 						<span><a href="/join.do">회원가입</a></span>
 					</c:if>
-					<c:if test="${member != null }">
-						<span>${member.name }님 환영합니다.</span><br>
+					<c:if test="${loginUser != null }">
+						<span>${loginUser.name }님 환영합니다.</span><br>
 						<div class="logout_button">
 							<a id="logoutBtn">로그아웃</a>
 						</div>

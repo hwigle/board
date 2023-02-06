@@ -8,10 +8,30 @@ public class MemberVO {
 	private String pw;			// 비밀번호
 	private String name;		// 이름
 	private String mail;		// 메일
-	private String addr;		// 주소
+	private String addr1;		// 우편번호
+	private String addr2;		// 주소
+	private String addr3;		// 상세주소
 	private Date regDate;		// 등록일
 	public String getId() {
 		return id;
+	}
+	public String getAddr1() {
+		return addr1;
+	}
+	public void setAddr1(String addr1) {
+		this.addr1 = addr1;
+	}
+	public String getAddr2() {
+		return addr2;
+	}
+	public void setAddr2(String addr2) {
+		this.addr2 = addr2;
+	}
+	public String getAddr3() {
+		return addr3;
+	}
+	public void setAddr3(String addr3) {
+		this.addr3 = addr3;
 	}
 	public void setId(String id) {
 		this.id = id;
@@ -33,12 +53,6 @@ public class MemberVO {
 	}
 	public void setMail(String mail) {
 		this.mail = mail;
-	}
-	public String getAddr() {
-		return addr;
-	}
-	public void setAddr(String addr) {
-		this.addr = addr;
 	}
 	public Date getRegDate() {
 		return regDate;
