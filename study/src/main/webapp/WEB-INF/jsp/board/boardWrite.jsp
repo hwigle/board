@@ -65,7 +65,7 @@
 		<table>
 			<tr>
 				<th width="20%"><label for="title">글제목</label></th>
-				<td width="80%"><input class="input1" type="text" name="title"	id="title"></td>
+				<td width="80%"><input class="input1" type="text" name="title"	id="title" maxlength="50"></td>
 			</tr>
 			<tr>
 				<th><label for="name">작성자</label></th>
@@ -73,7 +73,7 @@
 			</tr>
 			<tr>
 				<th><label for="content">글내용</label></th>
-				<td><textarea rows="5" cols="30" class="textarea" name="contents" id="contents"></textarea></td>
+				<td><textarea rows="5" cols="30" maxlength="1000" class="textarea" name="contents" id="contents" ></textarea></td>
 			</tr>
 			<tr>
 				<th colspan="2">

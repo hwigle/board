@@ -44,7 +44,7 @@ public class BoardController {
 			model.addAttribute("list", list);
 			
 			// 게시글 총 갯수
-			int total = service.getTotal();
+			int total = service.getTotal(cri);
 			
 			PageMaker pageMaker = new PageMaker(cri, total);
 			

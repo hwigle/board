@@ -37,13 +37,7 @@
 	background-color: red;
 	float:left;
 }
-/* 검색 박스 영역 */
-.search_area{
-	width: 50%;
-	height: 100%;
-	background-color: yellow;
-	float:left;	
-}
+
 /* 로그인 버튼 영역 */
 .login_area{
 	width: 25%;

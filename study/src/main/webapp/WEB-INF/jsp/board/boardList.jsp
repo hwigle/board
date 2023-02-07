@@ -42,8 +42,7 @@ a:hover {
 <body>
 <%@ include file="/fix/header.jsp" %>
 <div>
-	<h1><a href="boarList.do">게시글 목록</a></h1>
-	<!-- <button style="margin: 0 0 10px 277px;"type="button" onclick="location='join.do'">가입하기</button> -->
+	<h1><a href="boardList.do">게시글 목록</a></h1>
 	<table border="1px">
 		<tr>
 			<th>글번호</th>
@@ -62,9 +61,15 @@ a:hover {
 			</tr>
 		</c:forEach>
 	</table>
-	<c:if test="${loginUser != null}">
-	<button style="margin:10px 291px;" type="button" onclick="location='boardWrite.do'">글쓰기</button>
-	</c:if>
+	<div class="search_wrap">
+		<div style="margin:10px 0 10px 0; " class="search_area">
+			<input style="width:100px;" type="text" name="keyword" value="${pageMaker.cri.keyword }"><button id="btn_Search">검색</button>
+			<c:if test="${loginUser != null}">
+				<button style="margin-left:150px;" type="button" onclick="location='boardWrite.do'">글쓰기</button>
+			</c:if>
+		</div>
+	</div>
+	
 	
 	<!-- 페이징[S] -->
 	<div class="pageInfo_wrap">
@@ -95,6 +100,7 @@ a:hover {
 	<form id="moveForm" action="/boardList.do" method="get">
 		<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}">
 		<input type="hidden" name="amount" value="${pageMaker.cri.amount}">
+		<input type="hidden" name="keyword" value="${pageMaker.cri.keyword}">
 	</form>
 </body>
 <script type="text/javascript">
@@ -107,5 +113,14 @@ a:hover {
 		moveForm.find("input[name='pageNum']").val($(this).attr("href"));
 		moveForm.submit();
 	});
+	
+	// 검색
+    $("#btn_Search").on("click", function(e){
+	    e.preventDefault();
+	    let val = $("input[name='keyword']").val();
+	    moveForm.find("input[name='keyword']").val(val);
+	    moveForm.find("input[name='pageNum']").val(1);
+	    moveForm.submit();
+    });
 </script>
 </html>

@@ -2,20 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="egovframework.example.board.mapper.BoardMapper">
 	
-	<!-- 게시글 목록 -->
-	<select id="selectList" resultType="BoardVO">
-		SELECT 
-			bno, 
-			title, 
-			writer, 
-			regDate, 
-			hit 
-		FROM 
-			board
-		ORDER BY bno DESC
-	</select>
-	
-	<!-- 게시물 목록(페이징) -->
     <select id="selectListPaging" resultType="BoardVO">
     <![CDATA[
         SELECT 
@@ -38,6 +24,11 @@
             	(SELECT * FROM board ORDER BY bno DESC) 
             WHERE 
             	rownum <= #{pageNum} * #{amount}
+    ]]>
+            	<if test="keyword != null">
+                    and title like '%'||#{keyword}||'%' 
+                </if>
+    <![CDATA[
             ) 
         WHERE rn > (#{pageNum} -1) * #{amount}
     ]]>
@@ -50,6 +41,10 @@
         	count(*) 
         FROM 
         	board
+        <if test="keyword != null">
+            <!-- Oracle -->
+            where title like '%'||#{keyword}||'%'
+        </if>
     
     </select>
 	

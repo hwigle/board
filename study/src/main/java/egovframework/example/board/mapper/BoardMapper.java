@@ -16,7 +16,7 @@ public interface BoardMapper {
 	    public List<BoardVO> selectListPaging(Criteria cri) throws Exception;
 		
 	    // 게시글 총 갯수
-	    public int getTotal() throws Exception;
+	    public int getTotal(Criteria cri) throws Exception;
 	    
 		// 게시글 상세
 		public BoardVO selectDetail(int bno) throws Exception;

@@ -60,7 +60,7 @@ public class BoardServiceImpl implements BoardService{
 	}
 
 	@Override
-	public int getTotal() throws Exception {
-		return mapper.getTotal();
+	public int getTotal(Criteria cri) throws Exception {
+		return mapper.getTotal(cri);
 	}
 }

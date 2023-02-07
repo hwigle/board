@@ -7,17 +7,6 @@
 <title>Insert title here</title>
 <script src="${pageContext.request.contextPath}/js/jquery-3.6.3.min.js"></script>
 </head>
-<script type="text/javascript">
-
-$(function(){
-	$("#delBtn").click(function(){
-		if(confirm("정말 삭제하시겠습니까?")){
-			location.replace("delete.do?bno=${detail.bno}");
-		}
-	}) 
-});   
-
-</script>
 <body>
 <%@ include file="/fix/header.jsp" %>
 <div>
@@ -61,4 +50,16 @@ $(function(){
 </form>
 </div>
 </body>
+<script type="text/javascript">
+
+// 게시글 삭제
+$(function(){
+	$("#delBtn").click(function(){
+		if(confirm("정말 삭제하시겠습니까?")){
+			location.replace("delete.do?bno=${detail.bno}");
+		}
+	}) 
+});   
+
+</script>
 </html>
