@@ -1,5 +1,7 @@
 package egovframework.example.board.service.impl;
 
+import java.util.Map;
+
 import javax.annotation.Resource;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,14 +34,12 @@ public class MemberServiceImpl implements MemberService{
 	public MemberVO login(MemberVO vo) throws Exception {
 		return mapper.login(vo);
 	}
-
+	
+	
+	// 로그인 Ajax
 	@Override
-	public MemberVO loginPost(MemberVO vo) throws Exception {
-		return mapper.loginPost(vo);
+	public MemberVO loginA(Map<String, Object> param) throws Exception {
+		return mapper.loginA(param);
 	}
 
-
-	
-	
-	
 }

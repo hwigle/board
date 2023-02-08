@@ -75,6 +75,14 @@
 			<mvc:mapping path="/login.do"/>
 			<bean class="egovframework.example.board.interceptor.LoginInterceptor"/>
 		</mvc:interceptor>
+		<mvc:interceptor>
+	 		<mvc:mapping path="/loginA.do"/>
+			<bean class="egovframework.example.board.interceptor.LoginInterceptor"/>
+		</mvc:interceptor>
+		<mvc:interceptor>
+			<mvc:mapping path="/boardWrite.do"/>
+			<bean class="egovframework.example.board.interceptor.AuthInterceptor"/>
+		</mvc:interceptor>
 	</mvc:interceptors>
     
     <!-- navermail설정 -->

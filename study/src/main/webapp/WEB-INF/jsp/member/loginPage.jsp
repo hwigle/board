@@ -33,7 +33,7 @@
 </style>
 </head>
 <body>
-	<form id="loginForm" action="login.do" method="post">
+	<form id="loginForm" action="/login.do" method="post">
 		<div class="border">
 			<h1>로그인</h1>
 			<input type="text" name="id" id="id" placeholder="아이디를 입력해주세요."><br>
@@ -51,7 +51,7 @@
 <script>
 $("#loginBtn").click(function() {
 	if ($.trim($("#id").val()) == "") {
-		alert("이름을 입력해주세요.");
+		alert("아이디 입력해주세요.");
 		$("#id").focus();
 		return false;
 	}

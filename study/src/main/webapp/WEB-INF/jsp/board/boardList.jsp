@@ -64,9 +64,7 @@ a:hover {
 	<div class="search_wrap">
 		<div style="margin:10px 0 10px 0; " class="search_area">
 			<input style="width:100px;" type="text" name="keyword" value="${pageMaker.cri.keyword }"><button id="btn_Search">검색</button>
-			<c:if test="${loginUser != null}">
-				<button style="margin-left:150px;" type="button" onclick="location='boardWrite.do'">글쓰기</button>
-			</c:if>
+				<button style="margin-left:150px;" type="button" onclick="location.href='boardWrite.do'">글쓰기</button>
 		</div>
 	</div>
 	

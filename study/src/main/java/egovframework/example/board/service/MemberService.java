@@ -1,5 +1,9 @@
 package egovframework.example.board.service;
 
+import java.util.Map;
+
+import org.springframework.web.bind.annotation.RequestBody;
+
 import egovframework.example.board.vo.MemberVO;
 
 public interface MemberService {
@@ -13,6 +17,6 @@ public interface MemberService {
 		// 로그인
 		public MemberVO login(MemberVO vo) throws Exception;
 		
-		//
-		public MemberVO loginPost(MemberVO vo) throws Exception;
+		// 로그인 Ajax
+		public MemberVO loginA(Map<String, Object> param) throws Exception;
 }

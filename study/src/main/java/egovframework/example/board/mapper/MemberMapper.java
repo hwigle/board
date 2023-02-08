@@ -1,5 +1,9 @@
 package egovframework.example.board.mapper;
 
+import java.util.Map;
+
+import org.springframework.web.bind.annotation.RequestBody;
+
 import egovframework.example.board.vo.MemberVO;
 import egovframework.rte.psl.dataaccess.mapper.Mapper;
 
@@ -15,5 +19,7 @@ public interface MemberMapper {
 		// 로그인
 		public MemberVO login(MemberVO vo) throws Exception;
 		
-		public MemberVO loginPost(MemberVO vo) throws Exception;
+		// 로그인 Ajax
+		public MemberVO loginA(Map<String, Object> param) throws Exception;
+		
 }
