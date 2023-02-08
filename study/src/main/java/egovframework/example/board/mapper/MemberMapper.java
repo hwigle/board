@@ -19,7 +19,4 @@ public interface MemberMapper {
 		// 로그인
 		public MemberVO login(MemberVO vo) throws Exception;
 		
-		// 로그인 Ajax
-		public MemberVO loginA(Map<String, Object> param) throws Exception;
-		
 }

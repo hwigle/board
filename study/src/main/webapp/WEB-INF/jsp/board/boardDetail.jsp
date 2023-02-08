@@ -27,7 +27,9 @@
 	</tr>
 	<tr>
 		<th>글내용</th>
-		<td><textarea rows="5" cols="30" class="textarea" name="contents" id="contents" readonly="readonly"><c:out value="${detail.contents}"/></textarea></td>
+		<td><textarea rows="5" cols="30" class="textarea" name="contents" id="contents" readonly="readonly"><c:out value="${detail.contents}"/> 
+			</textarea>
+		</td>
 	</tr>
 	<tr>
 		<th>작성일</th>

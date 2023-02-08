@@ -100,6 +100,7 @@
 <body>
 <div class="wrapper">
 	<div class="wrap">
+	<h1><a href="main.do">Wini</a></h1>
 		<div class="top_area">
 				<div class="login_area">
 					<c:if test="${loginUser == null }">
@@ -127,6 +128,7 @@ $("#logoutBtn").click(function(){
 		type:"post",
 		url:"logout.do",
 		success:function(data){
+			console.log(data);
 			document.location.reload();
 		}
 	})	

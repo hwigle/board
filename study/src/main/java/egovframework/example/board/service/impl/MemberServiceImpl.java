@@ -35,11 +35,5 @@ public class MemberServiceImpl implements MemberService{
 		return mapper.login(vo);
 	}
 	
-	
-	// 로그인 Ajax
-	@Override
-	public MemberVO loginA(Map<String, Object> param) throws Exception {
-		return mapper.loginA(param);
-	}
 
 }

@@ -93,33 +93,9 @@ public class MemberController {
 		} catch (Exception e) {
 			logger.error(e.toString());
 		}
-		return "redirect:boardList.do";
+		return "main";
 	}
-	
-	// 로그인 페이지 이동
-	@GetMapping("loginAjax.do")
-	public String loginAjax() {
-		return "member/loginAjax";
-	}
-	
-	// ajax 로그인
-	@PostMapping("/loginA.do")
-	@ResponseBody
-	public String loginA(HttpServletRequest request, @RequestBody Map<String, Object> param, ModelMap model) throws Exception {
-		String rt="";
-		
-		try {
-			MemberVO login = service.loginA(param);
-			if(login != null) {
-				model.addAttribute("login", login);
-				rt="1";
-			}
-		} catch(Exception e) {
-			logger.error("예외 발생 : "+e.toString());
-			rt="2";
-		}
-		return rt;
-	}
+
 	// 로그아웃
 	@PostMapping("logout.do")
 	@ResponseBody
@@ -128,7 +104,7 @@ public class MemberController {
 		HttpSession session = request.getSession();
 		//session.removeAttribute("loginUser"); //특정 이름으로 네이밍한 session 객체를 삭제
 		session.invalidate(); // 세션 전체 무효화
-		return "redirect:/board/boardList";
+		return "redirect:/main.do";
 	}
 	
 	// 이메일 인증

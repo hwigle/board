@@ -12,7 +12,7 @@
 <script type="text/javascript">
 	
 	function fn_modify() {
- 	
+ 		var bno = $("#bno").val();
 		var data = {
 				bno:$('#bno').val(),
 				title:$("#title").val(),
@@ -31,7 +31,7 @@
 			success: function(rt) {  
 				if(rt == "1") {
 					alert("수정 완료");
-					location="boardList.do";
+					location="boardDetail.do?bno="+bno;
 				} else if(rt == "2") {
 					alert("SQL 에러");
 				} else {

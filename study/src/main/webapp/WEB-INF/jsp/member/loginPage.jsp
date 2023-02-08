@@ -38,7 +38,7 @@
 			<h1>로그인</h1>
 			<input type="text" name="id" id="id" placeholder="아이디를 입력해주세요."><br>
 			<input type="password" name="pw" id="pw" placeholder="비밀번호를 입력해주세요."><br><br>
-			<c:if test ="${result == 0 }">
+			<c:if test ="${message == 'error' }">
 					<script type="text/javascript">
 						alert("로그인 정보가 올바르지 않습니다.");
 					</script>
